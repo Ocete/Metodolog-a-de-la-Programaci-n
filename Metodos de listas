@@ -1,0 +1,36 @@
+void insertarEnPosicionP(Celda* &lista, Celda* p, double valor) {
+  Celda* aux;
+  aux = new Celda;
+  aux->dato = valor;
+  aux->sig = p->sig;
+  p->sig;
+}
+
+void insertarAntesDeP (Celda* &lista, Celda* p, double valor) {
+  if (lista == 0 || lista == p) {
+    insertarPrincipioLista(lista, valor);
+  } else {
+    Celda* aux = lista;
+    //Esto peta super fuerte si p no está en la lista, segmentation fault
+    while (aux->sig != p) {
+      aux = aux->sig;
+    }
+
+    insertarEnPosicionP(&lista, aux, valor);
+  }
+}
+
+void borrarCeldaApuntadaPorP (Celda* &lista, Celda* p) {
+  if (lista == p) {
+    lista = p->sig;
+    delete p;
+  } else {
+    Celda* aux = lista;
+    //Esto peta super fuerte si p no está en la lista, segmentation fault
+    while (aux->sig != p) {
+      aux = aux->sig;
+    }
+
+    //Incompleto
+  }
+}

@@ -1,0 +1,55 @@
+\documentclass[11pt,a4paper]{article}
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage{boldline}
+\usepackage{amssymb, amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+%\usepackage{soul}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{float} %para el [H] de las imagenes
+
+% Meta
+\title{Memoria de la práctica 4}
+\author{José Antonio Álvarez Ocete - 77553417Q\\Elena Cantero Molina - 45744912M}
+\date{\today}
+
+% Custom
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\setlength\parindent{0pt}
+\definecolor{Light}{gray}{.90}
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+\maketitle
+
+\tab Debido a errores en la práctica anterior hemos tenido ciertos problemas en esta, ademśa de los derivados de las entrda/salida realizadas en esta práctica. Por un lado hemos tenido ciertos inconvenientes en la lectura de los nombres de los archivos en \textbf{testarteASCII}. Podríamos haber definido vectores estáticos para todos ellos pero decidimos que sería mucho más cómodo y menos costoso en cuanto a memoria utilizar strings. Nos planteamos utilizar el main con argumentos, cosa que prepararemos para la siguiente práctica, pero no lo hicimos porque no lo comentamos previamente con el profesor y no sabíamos si estaría dentro del ámbito de esta práctica. \\
+
+\tab Por extraño que parezca tuvimos ciertos problemas para utilizar la función \emph{stoi}. Es por ello que utilizamos \emph{atoi} para leer el número de imágenes a imprimir: 
+
+\begin{verbatim} 
+getline(fentrada, grises);
+nImagenes = atoi(grises.c_str());
+\end{verbatim}
+
+\tab Hemos modificado la función aArteASCII para pasarle también el tamaño de la cadena de grises. Podríamos no pasarlo como parámetro e iterar sobre el vector hasta encontrar el \textbf{$'\backslash0'$} pero pudiendo utilizar string.size() lo consideramos una complicación innecesaria. \\
+
+\tab También hemos arreglado ciertos errores en la función \textbf{aArteASCII} que nos han dado grandes dolores de cabeza (como dividir por 255 en vez de 256 porque creíamos que ponía eso en el guión de la práctica anterior). \\
+
+\tab Por otro lado no sabemos exactamente qué se nos pide en cuanto a las imágenes facilitadas por el profesor. Para el programa \textbf{testarteASCII} usamos la imagen $icon\_BIN.pgm$ y alguna de tipo texto para probar que se leen bien este tipo de imágenes pero no se especifíca nada sobre qué hacer con ellas ni que nuevos parámetros han de establecerse para el correcto funcionamiento de los programas. Es por esto que adjuntamos unicamente las imágenes que utilizan nuestros programas de comprobación. \\
+
+\tab Por último, hemos añadido un archivo \textbf{entrada.txt} para mayor facilidad en el uso del programa \textbf{testarteASCII}. Basta con escribir el siguiente orden en la línea de comandos para que se ejecute el programa tomando los datos de dicho archivo:
+
+\begin{verbatim} 
+bin/testarteASCII < data/entrada.txt
+\end{verbatim}
+
+
+\end{document}

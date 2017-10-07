@@ -1,0 +1,4 @@
+data/rajoy.pgm
+data/iglesias.pgm
+10
+data/moprh

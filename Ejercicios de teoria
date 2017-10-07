@@ -1,0 +1,34 @@
+//MP Relación 1 - Problema 5
+
+int mezclaUnico(const double array1[], const double array2[], double salida[], int util1, int util2) {
+  int i1 = 0, i2 = 0, i3 = 0;
+
+  while (i1 < util1 && i2 < util2) {
+    if (array1[i1] > array2[i2]) {
+      salida[i3] = array1[i1];
+      i1++;
+    } else if (array1[i1] < array2[i2]){
+      salida[i3] = array2[i2];
+      i2++;
+    } else {
+      salida[i3] = array1[i1];
+      i1++;
+      i2++;
+    }
+    i3++;
+  }
+
+  while (i1 < util1) {
+    salida[i3] = array1[i1];
+    i1++;
+    i3++;
+  }
+
+  while (i2 < util1) {
+    salida[i3] = array2[i2];
+    i2++;
+    i3++;
+  }
+
+  return i3;
+}
